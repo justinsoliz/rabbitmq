@@ -19,8 +19,8 @@ channel.exchange_declare(exchange="hello-exchange",
 channel.queue_declare(queue="hello-queue")
 
 # 5 - bind queue and exchange on key "hola"
-channel.queue_bind(queue="hello-queue", 
-    exchange="hello_exchange", routing_key="hola")
+channel.queue_bind(queue="hello-queue", exchange="hello-exchange", 
+    routing_key="hola")
 
 # 6 - function to process incoming messages
 def msg_consumer(channel, method, header, body):
